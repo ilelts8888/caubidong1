@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Luyện Tập Số 1: Câu Bị Động - Ms Lê Hằng English</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #4A00E0, #8E2DE2, #00C9A7, #FF7675, #6C5CE7);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            padding: 20px 10px 60px 10px;
+            color: #2d3436;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bg-patterns {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><g fill="%23FFFFFF"><path d="M20 10l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/><circle cx="80" cy="30" r="8"/><path d="M100 80c0 5-5 10-10 10s-10-5-10-10 5-10 10-10 10 5 10 10z"/><path d="M30 90l5-10 10 5-5 10z"/><path d="M70 100l2 4 4 2-4 2-2 4-2-4-4-2 4-2z"/></g></svg>');
+            animation: floatPatterns 20s linear infinite;
+        }
+
+        @keyframes floatPatterns {
+            from { background-position: 0 0; }
+            to { background-position: 120px 240px; }
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .teacher-badge {
+            display: inline-block;
+            background: #ffffff;
+            color: #6C5CE7;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            margin-bottom: 10px;
+            border: 2px solid #6C5CE7;
+            transform: rotate(-1deg);
+        }
+
+        .main-title {
+            font-size: 25px;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 3px 0px rgba(0,0,0,0.2);
+            margin-bottom: 12px;
+        }
+
+        .reminder-card {
+            background: #FFF9E6;
+            border: 3px solid #FFEAA7;
+            border-left: 8px solid #FDCB6E;
+            border-radius: 18px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .reminder-title {
+            color: #D63031;
+            font-weight: 900;
+            font-size: 17px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .reminder-text {
+            color: #2d3436;
+            font-size: 14.5px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .reminder-highlight {
+            display: block;
+            margin-top: 8px;
+            color: #6C5CE7;
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        .question-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 22px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            border: 3px solid #F0F0F0;
+            transition: transform 0.2s ease;
+            position: relative;
+        }
+
+        .q-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            border-bottom: 2px dashed #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .q-number {
+            background: #6C5CE7;
+            color: white;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 4px 14px;
+            border-radius: 12px;
+            box-shadow: 0 3px 0 #4b38b3;
+        }
+
+        .q-type {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #b2bec3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .q-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: #2d3436;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .opt-btn {
+            background: #F8F9FA;
+            border: 2px solid #E9ECEF;
+            border-bottom: 5px solid #DEE2E6;
+            border-radius: 18px;
+            padding: 13px 16px;
+            font-size: 15.5px;
+            font-weight: 700;
+            color: #495057;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            outline: none;
+            user-select: none;
+        }
+
+        .opt-btn:hover:not([disabled]) {
+            transform: translateY(-2px) scale(1.01);
+            background: #EDF2F7;
+            border-color: #CBD5E0;
+        }
+
+        .opt-btn:active:not([disabled]) {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+        }
+
+        .opt-prefix {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #E2E8F0;
+            color: #4A5568;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .opt-btn.correct {
+            background: #E6F9F0 !important;
+            border-color: #00D26A !important;
+            border-bottom: 5px solid #00A852 !important;
+            color: #007A3D !important;
+        }
+        .opt-btn.correct .opt-prefix {
+            background: #00D26A !important;
+            color: white !important;
+        }
+
+        .opt-btn.wrong {
+            background: #FFEAEA !important;
+            border-color: #FF4757 !important;
+            border-bottom: 5px solid #D63031 !important;
+            color: #C0392B !important;
+            animation: shake 0.4s ease;
+        }
+        .opt-btn.wrong .opt-prefix {
+            background: #FF4757 !important;
+            color: white !important;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-6px); }
+            40%, 80% { transform: translateX(6px); }
+        }
+
+        .explanation-box {
+            display: none;
+            margin-top: 18px;
+            background: #F3F0FF;
+            border: 2px dashed #9B51E0;
+            border-radius: 18px;
+            padding: 16px 18px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .explanation-box.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .exp-head {
+            font-weight: 900;
+            color: #6C5CE7;
+            font-size: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .exp-section {
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.55;
+            color: #2d3436;
+        }
+
+        .exp-section strong {
+            color: #6C5CE7;
+        }
+
+        .exp-list {
+            margin-left: 12px;
+            list-style: none;
+        }
+
+        .exp-list li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .exp-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #8854C0;
+            font-weight: bold;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .submit-btn {
+            background: #00D26A;
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+            padding: 16px 45px;
+            border: none;
+            border-bottom: 6px solid #00A852;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 210, 106, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            background: #00E676;
+        }
+
+        .submit-btn:active {
+            transform: translateY(3px);
+            border-bottom-width: 2px;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: 28px;
+            max-width: 500px;
+            width: 100%;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border: 4px solid #6C5CE7;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-score {
+            font-size: 48px;
+            font-weight: 900;
+            color: #6C5CE7;
+            margin: 10px 0;
+        }
+
+        .modal-msg {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2d3436;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            background: #F8F9FA;
+            padding: 16px;
+            border-radius: 16px;
+            border-left: 5px solid #6C5CE7;
+        }
+
+        .close-modal-btn {
+            background: #6C5CE7;
+            color: white;
+            border: none;
+            border-bottom: 4px solid #4b38b3;
+            padding: 12px 30px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-patterns"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <header>
+            <div class="teacher-badge">👩‍🏫 Giáo viên tạo: Ms Lê Hằng English</div>
+            <h1 class="main-title">🎯 BÀI LUYỆN TẬP SỐ 1: CÂU BỊ ĐỘNG (PASSIVE VOICE)</h1>
+        </header>
+
+        <div class="reminder-card">
+            <div class="reminder-title">
+                <span>⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</span>
+            </div>
+            <div class="reminder-text">
+                Chỉ có đọc kỹ giải thích cấu trúc bị động ngay sau mỗi câu, sau đó ghi lại công thức vào vở để học thì mới thực sự nắm vững.<br>
+                Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!
+                <span class="reminder-highlight">* Kéo tới đâu, làm tới đó! *</span>
+            </div>
+        </div>
+
+        <div id="quiz-container"></div>
+
+        <div class="submit-container">
+            <button class="submit-btn" onclick="submitQuiz()">NỘP BÀI THI 🚀</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="result-modal">
+        <div class="modal-card">
+            <div style="font-size: 50px;">🏆</div>
+            <h2 style="font-weight: 900; color:#2d3436;">KẾT QUẢ BÀI LÀM</h2>
+            <div class="modal-score" id="score-text">0 / 50</div>
+            <div class="modal-msg" id="comment-text">...</div>
+            <button class="close-modal-btn" onclick="closeModal()">ĐÓNG VÀ XEM LẠI BÀI 📝</button>
+        </div>
+    </div>
+
+    <script>
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new AudioContext();
+        }
+
+        function playSound(type) {
+            try {
+                initAudio();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                if (type === 'correct') {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(1318.51, audioCtx.currentTime + 0.3);
+                    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.4);
+                } else if (type === 'wrong') {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(160, audioCtx.currentTime + 0.15);
+                    osc.frequency.setValueAtTime(110, audioCtx.currentTime + 0.3);
+                    gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.45);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.45);
+                }
+            } catch (e) {
+                console.log("Audio waiting for user gesture", e);
+            }
+        }
+
+        const rawQuestions = [
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 1: [EMPIRE TEAM] The students had their essays _____ carefully by teachers before the final submission deadline.",
+                options: [
+                    { text: "marking", correct: false },
+                    { text: "to mark", correct: false },
+                    { text: "marked", correct: true },
+                    { text: "mark", correct: false }
+                ],
+                explanation: {
+                    translation: "Các học sinh đã nhờ thầy cô chấm bài luận của mình một cách cẩn thận trước thời hạn nộp bài cuối cùng.",
+                    optionsDict: [
+                        "A. marking (V-ing)",
+                        "B. to mark (To-V)",
+                        "C. marked (V3/ed)",
+                        "D. mark (V-bare)"
+                    ],
+                    whyCorrect: "Cấu trúc thể truyền sai/bị động truyền sai: `have + something + V3/ed` (nhờ/thuê cái gì được làm bởi ai).",
+                    whyIncorrect: "Các dạng động từ còn lại không khớp với cấu trúc 'have something done'."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 2: [EMPIRE TEAM] The mountaineers who had been trapped by the avalanche were very lucky _____ by the rescue team within an hour.",
+                options: [
+                    { text: "to have found", correct: false },
+                    { text: "having been found", correct: false },
+                    { text: "to have been found", correct: true },
+                    { text: "being found", correct: false }
+                ],
+                explanation: {
+                    translation: "Những người leo núi bị mắc kẹt bởi trận lở tuyết đã rất may mắn khi được đội cứu hộ tìm thấy trong vòng một giờ.",
+                    optionsDict: [
+                        "A. to have found (Chủ động)",
+                        "B. having been found (Danh động từ)",
+                        "C. to have been found (To-V hoàn thành bị động)",
+                        "D. being found (Danh động từ bị động)"
+                    ],
+                    whyCorrect: "Cấu trúc: `Adj + to have been + V3/ed` dùng để diễn tả một sự việc bị động đã xảy ra trước thời điểm ở hiện tại/quá khứ được nhắc tới.",
+                    whyIncorrect: "A mang nghĩa chủ động; B và D sai dạng ngữ pháp sau tính từ 'lucky'."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 3: [EMPIRE TEAM] Most forests in other climatic areas _____ by human beings.",
+                options: [
+                    { text: "have already been affected", correct: true },
+                    { text: "have already affected", correct: false },
+                    { text: "have already been affecting", correct: false },
+                    { text: "had already been affected", correct: false }
+                ],
+                explanation: {
+                    translation: "Hầu hết các khu rừng ở các vùng khí hậu khác đã bị ảnh hưởng bởi con người.",
+                    optionsDict: [
+                        "A. have already been affected (Hiện tại hoàn thành bị động)",
+                        "B. have already affected (Chủ động)",
+                        "C. have already been affecting (Hiện tại hoàn thành tiếp diễn)",
+                        "D. had already been affected (Quá khứ hoàn thành bị động)"
+                    ],
+                    whyCorrect: "Chủ ngữ 'forests' (rừng) không thể tự tác động mà chịu sự tác động bởi con người ('by human beings') -> dùng bị động Hiện tại hoàn thành.",
+                    whyIncorrect: "B và C là thể chủ động; D sai thì vì không có mốc quá khứ nào để so sánh."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 4: [EMPIRE TEAM] Orphan elephants need _____ the same companionship as they _____ from their mothers in the wild.",
+                options: [
+                    { text: "to be given - would have received", correct: false },
+                    { text: "to have given - had received", correct: false },
+                    { text: "to have been given - would receive", correct: true },
+                    { text: "being given - are receiving", correct: false }
+                ],
+                explanation: {
+                    translation: "Những chú voi mồ côi cần phải nhận được sự gắn kết tương tự như những gì chúng sẽ nhận được từ mẹ trong tự nhiên.",
+                    optionsDict: [
+                        "Cấu trúc 1: need + to have been V3/ed (diễn tả nhu cầu bị động cần được thực hiện hoàn tất)",
+                        "Cấu trúc 2: would + V (mệnh đề giả định/điều kiện trong quá khứ/tương lai)"
+                    ],
+                    whyCorrect: "Đáp án C phản ánh chuẩn dạng bị động hoàn thành của động từ sau 'need' và mệnh đề so sánh giả định.",
+                    whyIncorrect: "A và B dùng sai dạng thời gian mệnh đề sau."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 5: [EMPIRE TEAM] The final research report _____ to the committee by the end of this week.",
+                options: [
+                    { text: "must submit", correct: false },
+                    { text: "must be submitting", correct: false },
+                    { text: "submitted", correct: false },
+                    { text: "must be submitted", correct: true }
+                ],
+                explanation: {
+                    translation: "Báo cáo nghiên cứu cuối cùng phải được nộp cho ủy ban vào cuối tuần này.",
+                    optionsDict: [
+                        "A. must submit (Chủ động)",
+                        "B. must be submitting (Tiếp diễn)",
+                        "C. submitted (Quá khứ)",
+                        "D. must be submitted (Bị động với Động từ khuyết thiếu)"
+                    ],
+                    whyCorrect: "Chủ ngữ 'report' (báo cáo) là vật -> Bị động với Modal Verb: `must + be + V3/ed`.",
+                    whyIncorrect: "A và B mang nghĩa chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 6: [EMPIRE TEAM] It was reported that several priceless paintings _____ stolen during the museum renovation last summer.",
+                options: [
+                    { text: "had been", correct: true },
+                    { text: "were", correct: false },
+                    { text: "are", correct: false },
+                    { text: "have", correct: false }
+                ],
+                explanation: {
+                    translation: "Có tin báo rằng một số bức tranh vô giá đã bị đánh cắp trong đợt trùng tu bảo tàng mùa hè năm ngoái.",
+                    optionsDict: [
+                        "A. had been (Quá khứ hoàn thành bị động đi với stolen)",
+                        "B. were",
+                        "C. are",
+                        "D. have"
+                    ],
+                    whyCorrect: "Hành động vụ trộm (stolen) xảy ra TRƯỚC thời điểm báo cáo (It was reported) -> dùng Quá khứ hoàn thành bị động `had been + V3`.",
+                    whyIncorrect: "B không lùi thì đúng tiến trình lịch sử sự việc trước quá khứ."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 7: [EMPIRE TEAM] Many American automobiles _____ in Detroit, Michigan.",
+                options: [
+                    { text: "manufacture", correct: false },
+                    { text: "have manufactured", correct: false },
+                    { text: "are manufactured", correct: true },
+                    { text: "are manufacturing", correct: false }
+                ],
+                explanation: {
+                    translation: "Nhiều xe hơi Mỹ được sản xuất tại Detroit, bang Michigan.",
+                    optionsDict: [
+                        "A. manufacture (Chủ động)",
+                        "B. have manufactured (Chủ động HTHT)",
+                        "C. are manufactured (Bị động Hiện tại đơn)",
+                        "D. are manufacturing (Chủ động tiếp diễn)"
+                    ],
+                    whyCorrect: "Chủ ngữ 'automobiles' (xe hơi) là vật, nhận tác động -> Bị động Hiện tại đơn: `am/is/are + V3/ed`.",
+                    whyIncorrect: "A, B, D đều ở dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 8: [EMPIRE TEAM] Ann hoped _____ to join the private club. She could make important business contacts there.",
+                options: [
+                    { text: "inviting", correct: false },
+                    { text: "being invited", correct: false },
+                    { text: "to invite", correct: false },
+                    { text: "to be invited", correct: true }
+                ],
+                explanation: {
+                    translation: "Ann hy vọng được mời tham gia câu lạc bộ tư nhân. Cô ấy có thể tạo các mối quan hệ kinh doanh quan trọng ở đó.",
+                    optionsDict: [
+                        "A. inviting",
+                        "B. being invited",
+                        "C. to invite (Chủ động)",
+                        "D. to be invited (Bị động với Hope)"
+                    ],
+                    whyCorrect: "Cấu trúc: `hope + to be + V3/ed` = hy vọng ĐƯỢC làm gì.",
+                    whyIncorrect: "C mang nghĩa chủ động (hy vọng đi mời người khác)."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 9: [EMPIRE TEAM] The preparation _____ by the time the guest _____.",
+                options: [
+                    { text: "had been finished - arrived", correct: true },
+                    { text: "have finished - arrived", correct: false },
+                    { text: "had finished - were arriving", correct: false },
+                    { text: "have been finished - were arrived", correct: false }
+                ],
+                explanation: {
+                    translation: "Sự chuẩn bị đã được hoàn thành vào thời điểm khách mời đến.",
+                    optionsDict: [
+                        "Cấu trúc: By the time + S + V(QKĐ), S + had been + V3/ed (QKHT Bị động)"
+                    ],
+                    whyCorrect: "Hành động 'chuẩn bị' được hoàn thành trước khi 'khách đến' -> Mệnh đề By the time chia QKĐ ('arrived'), mệnh đề chính chia QKHT Bị động ('had been finished').",
+                    whyIncorrect: "B, C, D sai phối hợp thì chuẩn."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 10: [EMPIRE TEAM] Her parents had the family house _____ completely after severe flooding destroyed furniture last winter.",
+                options: [
+                    { text: "renovate", correct: false },
+                    { text: "renovated", correct: true },
+                    { text: "renovating", correct: false },
+                    { text: "to renovate", correct: false }
+                ],
+                explanation: {
+                    translation: "Cha mẹ cô ấy đã thuê sửa sang lại toàn bộ ngôi nhà sau khi trận lũ lụt dữ dội phá hủy nội thất vào mùa đông năm ngoái.",
+                    optionsDict: [
+                        "Cấu trúc thể truyền sai: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "Sau 'had' + tân ngữ chỉ vật 'the family house' -> dùng động từ ở dạng V3/ed (`renovated`).",
+                    whyIncorrect: "A, C, D sai dạng động từ trong cấu trúc truyền sai bị động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 11: [EMPIRE TEAM] _____ the final report _____ before the committee reached its official decision yesterday afternoon?",
+                options: [
+                    { text: "Has / been approved", correct: false },
+                    { text: "Had / been approved", correct: true },
+                    { text: "Will / be approved", correct: false },
+                    { text: "Is / being approved", correct: false }
+                ],
+                explanation: {
+                    translation: "Báo cáo cuối cùng đã được phê duyệt trước khi ủy ban đưa ra quyết định chính thức vào chiều qua chưa?",
+                    optionsDict: [
+                        "Cấu trúc nghi vấn Quá khứ hoàn thành bị động: `Had + S + been + V3/ed...?`"
+                    ],
+                    whyCorrect: "Sự việc 'phê duyệt báo cáo' xảy ra trước mốc quá khứ 'reached' -> Chia QKHT Bị động.",
+                    whyIncorrect: "A chia hiện tại; C chia tương lai; D chia hiện tại tiếp diễn."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 12: [EMPIRE TEAM] The corporation had its financial records _____ after regulators launched a comprehensive fraud investigation.",
+                options: [
+                    { text: "audit", correct: false },
+                    { text: "auditing", correct: false },
+                    { text: "audited", correct: true },
+                    { text: "to audit", correct: false }
+                ],
+                explanation: {
+                    translation: "Tập đoàn đã yêu cầu kiểm toán các hồ sơ tài chính của mình sau khi các cơ quan quản lý mở cuộc điều tra gian lận toàn diện.",
+                    optionsDict: [
+                        "Cấu trúc truyền sai bị động: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "'had' + 'its financial records' (vật) -> động từ theo sau là V3/ed (`audited`).",
+                    whyIncorrect: "A, B, D không đúng cấu trúc thể bị động truyền sai."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 13: [EMPIRE TEAM] _____ this work _____ before you went to Moscow?",
+                options: [
+                    { text: "Will/ have been done", correct: false },
+                    { text: "Has/ been done", correct: false },
+                    { text: "Will/ be done", correct: false },
+                    { text: "Had/ been done", correct: true }
+                ],
+                explanation: {
+                    translation: "Công việc này đã được hoàn thành trước khi bạn đi Moscow chưa?",
+                    optionsDict: [
+                        "Cấu trúc: `Had + S + been + V3/ed + before + S + V(QKĐ)?`"
+                    ],
+                    whyCorrect: "Hỏi về hành động xảy ra trước hành động trong quá khứ 'went to Moscow' -> Chia QKHT bị động.",
+                    whyIncorrect: "A, B, C sai sự phối hợp thì quá khứ."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 14: [EMPIRE TEAM] It is widely believed that the reform package _____ economic stability across multiple vulnerable regional markets.",
+                options: [
+                    { text: "will restore", correct: true },
+                    { text: "restoring", correct: false },
+                    { text: "restores", correct: false },
+                    { text: "restore", correct: false }
+                ],
+                explanation: {
+                    translation: "Người ta tin tưởng rộng rãi rằng gói cải cách sẽ khôi phục sự ổn định kinh tế trên nhiều thị trường khu vực dễ bị tổn thương.",
+                    optionsDict: [
+                        "Mệnh đề 'that + S + V': gói cải cách sẽ chủ động khôi phục sự ổn định kinh tế"
+                    ],
+                    whyCorrect: "'The reform package' (chủ ngữ) thực hiện hành động 'restore' tân ngữ 'economic stability' -> Chia thể chủ động thì Tương lai đơn `will restore`.",
+                    whyIncorrect: "B, C, D không hợp ngữ cảnh dự đoán tương lai."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 15: [EMPIRE TEAM] Once _____ properly, the documents will be forwarded to the legal department.",
+                options: [
+                    { text: "checking", correct: false },
+                    { text: "checked", correct: true },
+                    { text: "have checked", correct: false },
+                    { text: "are checking", correct: false }
+                ],
+                explanation: {
+                    translation: "Một khi được kiểm tra cẩn thận, các tài liệu sẽ được chuyển đến phòng pháp chế.",
+                    optionsDict: [
+                        "Rút gọn mệnh đề bị động cùng chủ ngữ: `Once + V3/ed` (= Once they are checked)"
+                    ],
+                    whyCorrect: "Tài liệu ('documents') nhận hành động kiểm tra -> Dùng V3/ed (`checked`).",
+                    whyIncorrect: "A, C, D ở dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 16: [EMPIRE TEAM] The diplomat got his security clearance _____ unexpectedly after controversial statements triggered international concern worldwide.",
+                options: [
+                    { text: "revoke", correct: false },
+                    { text: "revoked", correct: true },
+                    { text: "revoking", correct: false },
+                    { text: "to revoke", correct: false }
+                ],
+                explanation: {
+                    translation: "Nhà ngoại giao đã bị thu hồi quyền miễn trừ an ninh một cách bất ngờ sau khi những tuyên bố gây tranh cãi kích hoạt mối quan ngại quốc tế.",
+                    optionsDict: [
+                        "Cấu trúc bị động nhờ bảo / gặp sự cố với GET: `get + something + V3/ed`"
+                    ],
+                    whyCorrect: "Sau 'got' + 'his security clearance' (vật) -> động từ dạng V3/ed (`revoked`).",
+                    whyIncorrect: "A, C, D không đúng cấu trúc với Get."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 17: [EMPIRE TEAM] The whistleblower got confidential emails _____ by forensic analysts after revealing large-scale corporate misconduct publicly.",
+                options: [
+                    { text: "examine", correct: false },
+                    { text: "examined", correct: true },
+                    { text: "examining", correct: false },
+                    { text: "to examine", correct: false }
+                ],
+                explanation: {
+                    translation: "Người tố giác đã nhờ các nhà phân tích pháp y kiểm tra các email bảo mật sau khi công khai hành vi sai trái quy mô lớn của doanh nghiệp.",
+                    optionsDict: [
+                        "Cấu trúc: `get + something + V3/ed`"
+                    ],
+                    whyCorrect: "'got' + 'confidential emails' (vật) -> chọn V3/ed (`examined`).",
+                    whyIncorrect: "Các lựa chọn khác không thuộc cấu trúc bị động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 18: [EMPIRE TEAM] The engineers had the unstable bridge _____ after alarming structural weaknesses were discovered during inspections recently.",
+                options: [
+                    { text: "reinforced", correct: true },
+                    { text: "to reinforce", correct: false },
+                    { text: "reinforce", correct: false },
+                    { text: "reinforcing", correct: false }
+                ],
+                explanation: {
+                    translation: "Các kỹ sư đã cho gia cố lại cây cầu không an toàn sau khi phát hiện những điểm yếu cấu trúc đáng lo ngại trong các đợt kiểm tra gần đây.",
+                    optionsDict: [
+                        "Cấu trúc: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "'had' + 'the unstable bridge' (vật) -> dùng V3/ed (`reinforced`).",
+                    whyIncorrect: "B, C, D sai dạng ngữ pháp."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 19: [EMPIRE TEAM] When _____ about their attitudes toward online learning platforms and digital classrooms, many high-school students express cautious optimism.",
+                options: [
+                    { text: "asking", correct: false },
+                    { text: "having asked", correct: false },
+                    { text: "asked", correct: true },
+                    { text: "are asking", correct: false }
+                ],
+                explanation: {
+                    translation: "Khi được hỏi về thái độ của mình đối với các nền tảng học trực tuyến, nhiều học sinh trung học phổ thông bày tỏ sự quan sát lạc quan thận trọng.",
+                    optionsDict: [
+                        "Rút gọn mệnh đề trạng ngữ bị động: `When + V3/ed` (= When they are asked)"
+                    ],
+                    whyCorrect: "Chủ ngữ 'high-school students' nhận hành động 'hỏi' -> Dùng quá khứ phân tử `asked`.",
+                    whyIncorrect: "A, B, D ở dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 20: [EMPIRE TEAM] The corporation had confidential contracts _____ by external auditors after regulators issued formal subpoenas internationally.",
+                options: [
+                    { text: "authenticated", correct: true },
+                    { text: "authenticating", correct: false },
+                    { text: "to be authenticated", correct: false },
+                    { text: "to authenticate", correct: false }
+                ],
+                explanation: {
+                    translation: "Tập đoàn đã cho các kiểm toán viên bên ngoài xác thực các hợp đồng bảo mật sau khi các cơ quan quản lý phát trát yêu cầu chính thức.",
+                    optionsDict: [
+                        "Cấu trúc: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "'had' + 'confidential contracts' (vật) -> đi với V3/ed (`authenticated`).",
+                    whyIncorrect: "B, C, D sai cấu trúc bị động truyền sai."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 21: [EMPIRE TEAM] The students were made _____ their mobile phones before entering the examination hall this morning.",
+                options: [
+                    { text: "leave", correct: false },
+                    { text: "leaving", correct: false },
+                    { text: "to leave", correct: true },
+                    { text: "left", correct: false }
+                ],
+                explanation: {
+                    translation: "Các học sinh bị bắt buộc phải để lại điện thoại di động trước khi vào phòng thi sáng nay.",
+                    optionsDict: [
+                        "Bị động của MAKE: `be made + to V`"
+                    ],
+                    whyCorrect: "Dạng chủ động là 'make sb do sth' -> Khi chuyển sang Bị động là `be made + to V` (`to leave`).",
+                    whyIncorrect: "A là V-bare (chỉ dùng trong câu chủ động)."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 22: [EMPIRE TEAM] He had his portrait _____ by a famous artist during an international exhibition last year.",
+                options: [
+                    { text: "paint", correct: false },
+                    { text: "painting", correct: false },
+                    { text: "painted", correct: true },
+                    { text: "to paint", correct: false }
+                ],
+                explanation: {
+                    translation: "Anh ấy đã nhờ một họa sĩ nổi tiếng vẽ chân dung của mình trong một cuộc triển lãm quốc tế vào năm ngoái.",
+                    optionsDict: [
+                        "Cấu trúc: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "'had' + 'his portrait' (bức chân dung) -> dùng V3/ed (`painted`).",
+                    whyIncorrect: "A, B, D không phù hợp ngữ pháp."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 23: [EMPIRE TEAM] The new bridge is believed _____ completed ahead of schedule despite numerous engineering difficulties reported.",
+                options: [
+                    { text: "be", correct: false },
+                    { text: "to be", correct: true },
+                    { text: "been", correct: false },
+                    { text: "being", correct: false }
+                ],
+                explanation: {
+                    translation: "Cây cầu mới được tin là sẽ được hoàn thành trước thời hạn mặc dù có nhiều khó khăn kỹ thuật được báo cáo.",
+                    optionsDict: [
+                        "Cấu trúc câu bị động truyền thuật: `S + is/are believed + to V / to be V3`"
+                    ],
+                    whyCorrect: "Sau 'is believed' dùng dạng `to be`.",
+                    whyIncorrect: "A, C, D thiếu 'to'."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 24: [EMPIRE TEAM] It was announced that the final results _____ online by midnight tonight officially.",
+                options: [
+                    { text: "will be published", correct: true },
+                    { text: "were published", correct: false },
+                    { text: "had been published", correct: false },
+                    { text: "being published", correct: false }
+                ],
+                explanation: {
+                    translation: "Đã có thông báo rằng kết quả cuối cùng sẽ được công bố trực tuyến chính thức vào trước nửa đêm nay.",
+                    optionsDict: [
+                        "Bị động Tương lai đơn: `will be + V3/ed`"
+                    ],
+                    whyCorrect: "Sự việc 'công bố' sẽ diễn ra vào đêm nay ('tonight') -> Chia Bị động Tương lai đơn `will be published`.",
+                    whyIncorrect: "B và C sai thì quá khứ cho sự việc chưa xảy ra."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 25: [EMPIRE TEAM] The final results were announced _____ published online by midnight tonight officially.",
+                options: [
+                    { text: "be", correct: false },
+                    { text: "to be", correct: true },
+                    { text: "been", correct: false },
+                    { text: "being", correct: false }
+                ],
+                explanation: {
+                    translation: "Kết quả cuối cùng đã được thông báo là sẽ được công bố trực tuyến vào trước nửa đêm nay.",
+                    optionsDict: [
+                        "Cấu trúc bị động hai thể: `S + were announced + to be + V3/ed`"
+                    ],
+                    whyCorrect: "Đứng sau động từ bị động 'were announced' cần dạng `to be`.",
+                    whyIncorrect: "A, C, D không đúng dạng to-infinitive."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 26: [EMPIRE TEAM] The confidential report _____ by independent analysts before being submitted to international regulatory authorities.",
+                options: [
+                    { text: "reviews", correct: false },
+                    { text: "was reviewed", correct: true },
+                    { text: "is reviewing", correct: false },
+                    { text: "has reviewing", correct: false }
+                ],
+                explanation: {
+                    translation: "Báo cáo bảo mật đã được xem xét bởi các nhà phân tích độc lập trước khi được trình lên các cơ quan quản lý quốc tế.",
+                    optionsDict: [
+                        "Bị động Quá khứ đơn: `was/were + V3/ed`"
+                    ],
+                    whyCorrect: "Báo cáo ('report') là vật chịu tác động -> Bị động Quá khứ đơn `was reviewed`.",
+                    whyIncorrect: "A, C, D đều ở dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 27: [EMPIRE TEAM] Several controversial policies _____ abandoned following widespread protests across multiple major metropolitan areas nationwide.",
+                options: [
+                    { text: "have been", correct: true },
+                    { text: "are being", correct: false },
+                    { text: "were being", correct: false },
+                    { text: "will be", correct: false }
+                ],
+                explanation: {
+                    translation: "Một số chính sách gây tranh cãi đã bị hủy bỏ sau các cuộc biểu tình lan rộng ở nhiều khu vực đô thị lớn trên toàn quốc.",
+                    optionsDict: [
+                        "Bị động Hiện tại hoàn thành: `have/has been + V3/ed`"
+                    ],
+                    whyCorrect: "Diễn tả hành động đã xảy ra để lại hậu quả ở hiện tại -> Dùng Bị động HTHT `have been` (đi với abandoned).",
+                    whyIncorrect: "B, C, D không hợp thời điểm diễn ra tác động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 28: [EMPIRE TEAM] They _____ while they were abroad for two months last summer.",
+                options: [
+                    { text: "had their apartment burgled", correct: true },
+                    { text: "had burgled their apartment", correct: false },
+                    { text: "got burgled their apartment", correct: false },
+                    { text: "were burgled their apartment", correct: false }
+                ],
+                explanation: {
+                    translation: "Căn hộ của họ đã bị trộm đột nhập trong khi họ ở nước ngoài hai tháng vào mùa hè năm ngoái.",
+                    optionsDict: [
+                        "Cấu trúc gặp sự cố không may mắn: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "Chủ ngữ 'They' + `had their apartment burgled`.",
+                    whyIncorrect: "B mang nghĩa họ tự trộm căn hộ của mình."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 29: [EMPIRE TEAM] The passengers stranded overnight at the airport were relieved _____ by airline staff early the next morning.",
+                options: [
+                    { text: "to have assisted", correct: false },
+                    { text: "having assisted", correct: false },
+                    { text: "to have been assisted", correct: true },
+                    { text: "being assisted", correct: false }
+                ],
+                explanation: {
+                    translation: "Các hành khách bị kẹt qua đêm tại sân bay đã cảm thấy nhẹ nhõm khi được nhân viên hãng hàng không hỗ trợ vào sáng sớm hôm sau.",
+                    optionsDict: [
+                        "Cấu trúc: `Adj + to have been + V3/ed` (đã được làm gì trước đó)"
+                    ],
+                    whyCorrect: "Hành khách nhẹ nhõm vì ĐÃ ĐƯỢC hỗ trợ trước đó -> Dùng dạng bị động hoàn thành `to have been assisted`.",
+                    whyIncorrect: "A mang nghĩa chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 30: [EMPIRE TEAM] The athlete still remembers vividly _____ by reporters after winning his first international medal.",
+                options: [
+                    { text: "to be questioned", correct: false },
+                    { text: "being questioned", correct: true },
+                    { text: "to have questioned", correct: false },
+                    { text: "questioning", correct: false }
+                ],
+                explanation: {
+                    translation: "Vận động viên vẫn nhớ rất rõ việc bị các phóng viên phỏng vấn dồn dập sau khi giành huy chương quốc tế đầu tiên.",
+                    optionsDict: [
+                        "Cấu trúc: `remember + being + V3/ed` (nhớ đã bị/được làm gì trong quá khứ)"
+                    ],
+                    whyCorrect: "Nhớ lại kỷ niệm đã xảy ra trong quá khứ ở dạng bị động -> Dùng `being questioned`.",
+                    whyIncorrect: "A chỉ hành động tương lai phải làm."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 31: [EMPIRE TEAM] The company was forced _____ compensation after violating international environmental protection regulations severely.",
+                options: [
+                    { text: "pay", correct: false },
+                    { text: "paying", correct: false },
+                    { text: "to pay", correct: true },
+                    { text: "paid", correct: false }
+                ],
+                explanation: {
+                    translation: "Công ty đã bị buộc phải trả tiền bồi thường sau khi vi phạm nghiêm trọng các quy định bảo vệ môi trường quốc tế.",
+                    optionsDict: [
+                        "Cấu trúc bị động: `be forced + to V` (bị buộc phải làm gì)"
+                    ],
+                    whyCorrect: "Sau 'was forced' dùng dạng `to pay`.",
+                    whyIncorrect: "A, B, D sai cấu trúc ngữ pháp."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 32: [EMPIRE TEAM] The manager got the broken air conditioner _____ immediately during yesterday's extremely hot afternoon meeting.",
+                options: [
+                    { text: "repairing", correct: false },
+                    { text: "repaired", correct: true },
+                    { text: "to repair", correct: false },
+                    { text: "repair", correct: false }
+                ],
+                explanation: {
+                    translation: "Người quản lý đã cho sửa chiếc máy điều hòa bị hỏng ngay lập tức trong cuộc họp chiều hôm qua.",
+                    optionsDict: [
+                        "Cấu trúc: `get + something + V3/ed`"
+                    ],
+                    whyCorrect: "'got' + 'the broken air conditioner' (vật) -> chọn V3/ed (`repaired`).",
+                    whyIncorrect: "A, C, D sai dạng ngữ pháp bị động nhờ bảo."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 33: [EMPIRE TEAM] The new policy is believed _____ environmental protection across several developing nations worldwide.",
+                options: [
+                    { text: "improve", correct: false },
+                    { text: "improving", correct: false },
+                    { text: "to improve", correct: true },
+                    { text: "improved", correct: false }
+                ],
+                explanation: {
+                    translation: "Chính sách mới được tin tưởng sẽ cải thiện việc bảo vệ môi trường tại một số quốc gia đang phát triển trên thế giới.",
+                    optionsDict: [
+                        "Cấu trúc bị động truyền thuật: `S + is believed + to V`"
+                    ],
+                    whyCorrect: "Sau 'is believed' dùng `to improve`.",
+                    whyIncorrect: "A, B, D sai dạng to-Infinitive."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 34: [EMPIRE TEAM] Jane would never forget _____ first prize in such a prestigious competition.",
+                options: [
+                    { text: "to be awarded", correct: false },
+                    { text: "being awarded", correct: true },
+                    { text: "to have awarded", correct: false },
+                    { text: "having awarded", correct: false }
+                ],
+                explanation: {
+                    translation: "Jane sẽ không bao giờ quên việc được trao giải nhất trong một cuộc thi uy tín như vậy.",
+                    optionsDict: [
+                        "Cấu trúc: `forget + being + V3/ed` (quên việc đã được làm trong quá khứ)"
+                    ],
+                    whyCorrect: "Quên kỷ niệm đã xảy ra dạng bị động -> Dùng `being awarded`.",
+                    whyIncorrect: "A dùng cho nghĩa 'quên nhiệm vụ phải làm'."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 35: [EMPIRE TEAM] She had her car engine _____ thoroughly after strange noises appeared during yesterday's long highway drive.",
+                options: [
+                    { text: "check", correct: false },
+                    { text: "checked", correct: true },
+                    { text: "checking", correct: false },
+                    { text: "to check", correct: false }
+                ],
+                explanation: {
+                    translation: "Cô ấy đã đưa động cơ xe hơi đi kiểm tra kỹ lưỡng sau khi xuất hiện tiếng động lạ trong chuyến lái xe đường dài ngày hôm qua.",
+                    optionsDict: [
+                        "Cấu trúc: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "'had' + 'her car engine' (vật) -> chọn V3/ed (`checked`).",
+                    whyIncorrect: "A, C, D không thuộc thể bị động truyền sai."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 36: [EMPIRE TEAM] I talked to Daniel yesterday and he said he _____ during the business conference abroad.",
+                options: [
+                    { text: "got lost his wallet", correct: false },
+                    { text: "had his wallet stolen", correct: true },
+                    { text: "had stolen his wallet", correct: false },
+                    { text: "was got his wallet stolen", correct: false }
+                ],
+                explanation: {
+                    translation: "Tôi đã nói chuyện với Daniel ngày hôm qua và anh ấy nói rằng anh ấy đã bị trộm mất ví trong chuyến hội thảo kinh doanh ở nước ngoài.",
+                    optionsDict: [
+                        "Cấu trúc bị động sự cố: `have + something + V3/ed` (had his wallet stolen)"
+                    ],
+                    whyCorrect: "Cấu trúc chuẩn `had his wallet stolen`.",
+                    whyIncorrect: "C mang nghĩa anh ấy tự đi ăn trộm ví của mình."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 37: [EMPIRE TEAM] We _____ that the stadium _____ before the international tournament begins next spring.",
+                options: [
+                    { text: "expect – will have been completed", correct: true },
+                    { text: "are expected – will be completing", correct: false },
+                    { text: "have been expecting – is completing", correct: false },
+                    { text: "are expecting – will have completed", correct: false }
+                ],
+                explanation: {
+                    translation: "Chúng tôi kỳ vọng rằng sân vận động sẽ được hoàn thành trước khi giải đấu quốc tế bắt đầu vào mùa xuân tới.",
+                    optionsDict: [
+                        "Cấu trúc: S + expect + that + S + will have been V3/ed (Tương lai hoàn thành bị động trước mốc 'next spring')"
+                    ],
+                    whyCorrect: "Mệnh đề 1: Chúng tôi chủ động kỳ vọng (`expect`); Mệnh đề 2: Sân vận động được hoàn thành trước mốc tương lai -> Dùng Tương lai hoàn thành bị động `will have been completed`.",
+                    whyIncorrect: "B, C, D sai sự phối hợp thì và thể bị động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 38: [EMPIRE TEAM] The heavy snowstorm resulted in hundreds of flights _____ across the region throughout the evening.",
+                options: [
+                    { text: "to cancel", correct: false },
+                    { text: "to have cancelled", correct: false },
+                    { text: "to be cancelled", correct: false },
+                    { text: "being cancelled", correct: true }
+                ],
+                explanation: {
+                    translation: "Trận bão tuyết dữ dội đã dẫn đến hàng trăm chuyến bay bị hủy trên toàn khu vực suốt cả buổi tối.",
+                    optionsDict: [
+                        "Cấu trúc: `result in + N/V-ing` -> Dạng bị động: `result in + N + being V3/ed`"
+                    ],
+                    whyCorrect: "Sau giới từ 'in' dùng V-ing bị động `being cancelled`.",
+                    whyIncorrect: "A, B, C dùng to-Infinitive sai sau giới từ."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 39: [EMPIRE TEAM] The printer malfunctioned again, so the manager is considering having _____ .",
+                options: [
+                    { text: "servicing it", correct: false },
+                    { text: "serviced it", correct: false },
+                    { text: "it servicing", correct: false },
+                    { text: "it serviced", correct: true }
+                ],
+                explanation: {
+                    translation: "Máy in lại bị hỏng, vì vậy người quản lý đang xem xét việc đưa nó đi bảo dưỡng.",
+                    optionsDict: [
+                        "Cấu trúc: `have + it (vật) + V3/ed`"
+                    ],
+                    whyCorrect: "'having' + 'it' (máy in) + 'serviced' (V3/ed) -> `it serviced`.",
+                    whyIncorrect: "A, B, C sai trật tự từ và dạng bị động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 40: [EMPIRE TEAM] They _____ while attending the international technology summit overseas last summer.",
+                options: [
+                    { text: "had lost their luggage", correct: false },
+                    { text: "had their luggage lost", correct: true },
+                    { text: "got lost their luggage", correct: false },
+                    { text: "were lost their luggage", correct: false }
+                ],
+                explanation: {
+                    translation: "Họ đã bị thất lạc hành lý khi tham dự hội nghị thượng đỉnh công nghệ quốc tế ở nước ngoài vào mùa hè năm ngoái.",
+                    optionsDict: [
+                        "Cấu trúc bị động rủi ro: `have + something + V3/ed`"
+                    ],
+                    whyCorrect: "`had their luggage lost` = hành lý của họ bị thất lạc.",
+                    whyIncorrect: "A mang nghĩa họ tự làm mất hành lý của mình."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 41: [EMPIRE TEAM] If the documents _____ during the audit, the investigation could proceed much faster tomorrow.",
+                options: [
+                    { text: "are discovered", correct: true },
+                    { text: "will be discovered", correct: false },
+                    { text: "discover", correct: false },
+                    { text: "discovered", correct: false }
+                ],
+                explanation: {
+                    translation: "Nếu các tài liệu được phát hiện trong quá trình kiểm toán, cuộc điều tra có thể tiến triển nhanh hơn nhiều vào ngày mai.",
+                    optionsDict: [
+                        "Câu điều kiện loại 1: Mệnh đề If chia Hiện tại đơn Bị động `am/is/are + V3/ed`"
+                    ],
+                    whyCorrect: "Chủ ngữ 'documents' số nhiều bị động -> `are discovered`.",
+                    whyIncorrect: "B sai vì mệnh đề IF không chia thì tương lai."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 42: [EMPIRE TEAM] This medication _____ rapidly by the digestive system and distributed throughout vital organs efficiently.",
+                options: [
+                    { text: "absorbs quickly", correct: false },
+                    { text: "is quickly absorbing", correct: false },
+                    { text: "is quickly absorbed", correct: true },
+                    { text: "absorbed quickly", correct: false }
+                ],
+                explanation: {
+                    translation: "Loại thuốc này được hấp thụ nhanh chóng bởi hệ tiêu hóa và được phân phối hiệu quả đến các cơ quan quan trọng.",
+                    optionsDict: [
+                        "Bị động Hiện tại đơn: `is/are + V3/ed`"
+                    ],
+                    whyCorrect: "Thuốc ('medication') được hấp thụ -> `is quickly absorbed`.",
+                    whyIncorrect: "A, B, D ở dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 43: [EMPIRE TEAM] All confidential files _____ securely before the inspectors arrived unexpectedly last week.",
+                options: [
+                    { text: "are stored", correct: false },
+                    { text: "is stored", correct: false },
+                    { text: "were stored", correct: true },
+                    { text: "has stored", correct: false }
+                ],
+                explanation: {
+                    translation: "Tất cả các tệp bảo mật đã được lưu trữ an toàn trước khi các thanh tra bất ngờ đến vào tuần trước.",
+                    optionsDict: [
+                        "Bị động Quá khứ đơn: `were + V3/ed` (phù hợp mốc last week)"
+                    ],
+                    whyCorrect: "'confidential files' danh từ số nhiều ở quá khứ -> Dùng `were stored`.",
+                    whyIncorrect: "A, B chia hiện tại."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 44: [EMPIRE TEAM] Everything that _____ during the closed-door negotiations was later revealed publicly by investigative journalists.",
+                options: [
+                    { text: "had been concealed", correct: true },
+                    { text: "had concealed", correct: false },
+                    { text: "had been concealing", correct: false },
+                    { text: "would have been concealed", correct: false }
+                ],
+                explanation: {
+                    translation: "Mọi thứ đã bị che giấu trong các cuộc đàm phán kín sau đó đã được các nhà báo điều tra công khai.",
+                    optionsDict: [
+                        "Bị động Quá khứ hoàn thành: `had been + V3/ed` (xảy ra trước 'was later revealed')"
+                    ],
+                    whyCorrect: "Hành động 'giấu giếm' xảy ra trước khi 'được công khai' -> Dùng QKHT Bị động `had been concealed`.",
+                    whyIncorrect: "B và C ở dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 45: [EMPIRE TEAM] The new safety regulations must _____ strictly across all construction sites nationwide this year.",
+                options: [
+                    { text: "enforce", correct: false },
+                    { text: "enforced", correct: false },
+                    { text: "be enforced", correct: true },
+                    { text: "being enforced", correct: false }
+                ],
+                explanation: {
+                    translation: "Các quy định an toàn mới phải được thực thi nghiêm ngặt tại tất cả các công trường xây dựng trên toàn quốc trong năm nay.",
+                    optionsDict: [
+                        "Bị động với Modal Verb: `must + be + V3/ed`"
+                    ],
+                    whyCorrect: "Sau 'must' dùng `be enforced`.",
+                    whyIncorrect: "A là dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 46: [EMPIRE TEAM] Several historical monuments _____ carefully restored after severe earthquake damage last decade.",
+                options: [
+                    { text: "restore", correct: false },
+                    { text: "have restored", correct: false },
+                    { text: "were restored", correct: true },
+                    { text: "are restoring", correct: false }
+                ],
+                explanation: {
+                    translation: "Một số di tích lịch sử đã được phục hồi cẩn thận sau thiệt hại do trận động đất dữ dội trong thập kỷ trước.",
+                    optionsDict: [
+                        "Bị động Quá khứ đơn: `were + V3/ed`"
+                    ],
+                    whyCorrect: "Có mốc thời gian quá khứ 'last decade' và chủ ngữ số nhiều -> Dùng `were restored`.",
+                    whyIncorrect: "A, B, D sai thì và dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 47: [EMPIRE TEAM] Consent forms must _____ by all research participants before joining clinical trials officially.",
+                options: [
+                    { text: "sign with", correct: false },
+                    { text: "be signed with", correct: false },
+                    { text: "sign by", correct: false },
+                    { text: "be signed by", correct: true }
+                ],
+                explanation: {
+                    translation: "Mẫu chấp thuận phải được ký bởi tất cả những người tham gia nghiên cứu trước khi chính thức tham gia các thử nghiệm lâm sàng.",
+                    optionsDict: [
+                        "Cấu trúc bị động: `must + be + V3/ed + by + SB`"
+                    ],
+                    whyCorrect: "`be signed by` = được ký bởi ai.",
+                    whyIncorrect: "A, B, C sai giới từ hoặc thể chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 48: [EMPIRE TEAM] The preliminary report _____ last night; it _____ earlier due to unexpected technical difficulties.",
+                options: [
+                    { text: "has not been released – had been delayed", correct: false },
+                    { text: "was not released – has been delayed", correct: false },
+                    { text: "was not released – had been delayed", correct: true },
+                    { text: "has not been released – has been delayed", correct: false }
+                ],
+                explanation: {
+                    translation: "Báo cáo sơ bộ đã không được công bố vào tối qua; nó đã bị trì hoãn từ trước đó do các sự cố kỹ thuật không mong muốn.",
+                    optionsDict: [
+                        "Vị trí 1: Bị động QKĐ (last night) -> was not released",
+                        "Vị trí 2: Bị động QKHT (trì hoãn trước tối qua) -> had been delayed"
+                    ],
+                    whyCorrect: "Phối hợp thì chuẩn giữa Bị động Quá khứ đơn và Quá khứ hoàn thành.",
+                    whyIncorrect: "A và D dùng thì Hiện tại hoàn thành sai mốc 'last night'."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 49: [EMPIRE TEAM] Many rare manuscripts _____ carefully preserved in climate-controlled archives across major research universities.",
+                options: [
+                    { text: "preserve", correct: false },
+                    { text: "are preserved", correct: true },
+                    { text: "have preserved", correct: false },
+                    { text: "are preserving", correct: false }
+                ],
+                explanation: {
+                    translation: "Nhiều bản thảo quý hiếm được bảo quản cẩn thận trong các lưu trữ kiểm soát khí hậu tại các trường đại học nghiên cứu lớn.",
+                    optionsDict: [
+                        "Bị động Hiện tại đơn: `are + V3/ed`"
+                    ],
+                    whyCorrect: "Chủ ngữ 'manuscripts' số nhiều nhận tác động bảo quản -> `are preserved`.",
+                    whyIncorrect: "A, C, D là dạng chủ động."
+                }
+            },
+            {
+                type: "PASSIVE VOICE",
+                question: "Question 50: [EMPIRE TEAM] When _____ ? – During the nineteenth century.",
+                options: [
+                    { text: "was the canal constructed", correct: true },
+                    { text: "did the canal constructed", correct: false },
+                    { text: "was the canal construct", correct: false },
+                    { text: "did the canal construct", correct: false }
+                ],
+                explanation: {
+                    translation: "Kênh đào được xây dựng khi nào? – Trong thế kỷ XIX.",
+                    optionsDict: [
+                        "Câu hỏi bị động Quá khứ đơn: `When + was/were + S + V3/ed?`"
+                    ],
+                    whyCorrect: "Chủ ngữ 'the canal' (kênh đào) bị động ở quá khứ -> `was the canal constructed`.",
+                    whyIncorrect: "B, C, D sai ngữ pháp nghi vấn bị động."
+                }
+            }
+        ];
+
+        let questions = [];
+
+        function shuffleArray(array) {
+            let cur = array.slice();
+            for (let i = cur.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cur[i], cur[j]] = [cur[j], cur[i]];
+            }
+            return cur;
+        }
+
+        function initQuiz() {
+            questions = rawQuestions.map(q => {
+                let shuffledOpts = shuffleArray(q.options);
+                return {
+                    ...q,
+                    shuffledOptions: shuffledOpts,
+                    userAnswerIndex: null
+                };
+            });
+            renderQuiz();
+        }
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            questions.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+
+                const optionsHTML = q.shuffledOptions.map((opt, optIdx) => {
+                    const letters = ['A', 'B', 'C', 'D'];
+                    return `
+                        <button class="opt-btn" id="opt-${idx}-${optIdx}" onclick="selectAnswer(${idx}, ${optIdx})">
+                            <span class="opt-prefix">${letters[optIdx]}</span>
+                            <span>${opt.text}</span>
+                        </button>
+                    `;
+                }).join('');
+
+                const exp = q.explanation;
+                const expDictHTML = exp.optionsDict.map(item => `<li>${item}</li>`).join('');
+
+                card.innerHTML = `
+                    <div class="q-header">
+                        <span class="q-number">Câu ${idx + 1} / ${questions.length}</span>
+                        <span class="q-type">${q.type}</span>
+                    </div>
+                    <div class="q-text">${q.question}</div>
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                    <div class="explanation-box" id="exp-${idx}">
+                        <div class="exp-head">💡 GIẢI THÍCH CHI TIẾT TỪ MS LÊ HẰNG:</div>
+                        <div class="exp-section"><strong>1. Dịch câu hỏi:</strong> ${exp.translation}</div>
+                        <div class="exp-section">
+                            <strong>2. Phân tích cấu trúc ngữ pháp:</strong>
+                            <ul class="exp-list">${expDictHTML}</ul>
+                        </div>
+                        <div class="exp-section"><strong>3. Tại sao chọn đáp án này?</strong> ${exp.whyCorrect}</div>
+                        <div class="exp-section"><strong>4. Tại sao các đáp án khác sai?</strong> ${exp.whyIncorrect}</div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function selectAnswer(qIdx, optIdx) {
+            const q = questions[qIdx];
+            if (q.userAnswerIndex !== null) return;
+
+            q.userAnswerIndex = optIdx;
+            const selectedOpt = q.shuffledOptions[optIdx];
+            const isCorrect = selectedOpt.correct;
+
+            const selectedBtn = document.getElementById(`opt-${qIdx}-${optIdx}`);
+
+            if (isCorrect) {
+                selectedBtn.classList.add('correct');
+                playSound('correct');
+                triggerConfetti();
+            } else {
+                selectedBtn.classList.add('wrong');
+                playSound('wrong');
+
+                q.shuffledOptions.forEach((o, i) => {
+                    if (o.correct) {
+                        document.getElementById(`opt-${qIdx}-${i}`).classList.add('correct');
+                    }
+                });
+            }
+
+            q.shuffledOptions.forEach((_, i) => {
+                const b = document.getElementById(`opt-${qIdx}-${i}`);
+                b.disabled = true;
+                b.style.cursor = 'default';
+            });
+
+            document.getElementById(`exp-${qIdx}`).classList.add('show');
+        }
+
+        function submitQuiz() {
+            let correctCount = 0;
+
+            questions.forEach(q => {
+                if (q.userAnswerIndex !== null && q.shuffledOptions[q.userAnswerIndex].correct) {
+                    correctCount++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correctCount / total) * 100);
+
+            document.getElementById('score-text').innerText = `${correctCount} / ${total} (${percentage}%)`;
+
+            let comment = "";
+            if (percentage < 50) {
+                comment = "Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích cấu trúc bị động và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!";
+            } else if (percentage <= 80) {
+                comment = "Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích cấu trúc bị động và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!";
+            } else {
+                comment = "Làm tốt lắm, con đã nắm rất vững chuyên đề Bị Động! Cố gắng giữ vững phong độ nha!";
+                triggerConfetti();
+            }
+
+            document.getElementById('comment-text').innerText = comment;
+            document.getElementById('result-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('result-modal').style.display = 'none';
+        }
+
+        function triggerConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#8854C0', '#FDCB6E', '#00C9A7', '#FF7675', '#6C5CE7', '#00D26A'];
+
+            for (let i = 0; i < 60; i++) {
+                particles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height / 2,
+                    vx: (Math.random() - 0.5) * 14,
+                    vy: (Math.random() - 0.7) * 14,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    life: 90
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let alive = false;
+
+                particles.forEach(p => {
+                    if (p.life > 0) {
+                        alive = true;
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.vy += 0.4;
+                        p.life -= 2;
+                        ctx.fillStyle = p.color;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+
+                if (alive) requestAnimationFrame(animate);
+                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+
+            animate();
+        }
+
+        window.onload = initQuiz;
+    </script>
+</body>
+</html>
